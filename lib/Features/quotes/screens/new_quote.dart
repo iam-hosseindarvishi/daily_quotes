@@ -1,17 +1,11 @@
+import 'package:daily_quotes/Features/quotes/widgets/drop_dwon.dart';
 import 'package:flutter/material.dart';
 
-class NewQuote extends StatefulWidget {
+class NewQuote extends StatelessWidget {
   const NewQuote({super.key});
-
-  @override
-  State<NewQuote> createState() => _NewQuoteState();
-}
-
-class _NewQuoteState extends State<NewQuote> {
-  var currentValue = "طراحی";
+  static const route = "/profile";
   @override
   Widget build(BuildContext context) {
-    var dropdownOptions = ["برنامه نویسی", "طراحی", "سخت"];
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.amber,
@@ -38,17 +32,7 @@ class _NewQuoteState extends State<NewQuote> {
               const SizedBox(
                 height: 20,
               ),
-              DropdownButton<String>(
-                value: currentValue,
-                onChanged: (value) {},
-                items: dropdownOptions
-                    .map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
-              ),
+              const CategoryDropDown(),
               TextButton.icon(
                 onPressed: () {},
                 label: const Text("ذخیره نقل قول"),

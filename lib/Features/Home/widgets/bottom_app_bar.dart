@@ -1,3 +1,4 @@
+import 'package:daily_quotes/Features/Favorite/Screens/favorite_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeBottomAppBar extends StatelessWidget {
@@ -24,7 +25,13 @@ class HomeBottomAppBar extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.favorite),
             color: Colors.white,
-            onPressed: () {}, // عملکرد دکمه علاقه‌مندی
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const FavoriteScreen(),
+                  ));
+            }, // عملکرد دکمه علاقه‌مندی
           ),
           IconButton(
             icon: const Icon(Icons.list),
